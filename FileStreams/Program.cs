@@ -67,12 +67,15 @@ namespace FileStreams
             sw.WriteLine(dataString);
             sw.WriteLine(dataInt);
             sw.WriteLine(dataFloat);
+            sw.Close();
         }
 
         // 2. Lê ficheiro em modo de texto
         private static void LerTexto()
         {
-            // Código aqui
+            StreamReader sr = File.OpenText(filenameText);
+            Console.WriteLine(sr.ReadLine());
+            sr.Close();
         }
 
         // 3. Escreve ficheiro em modo binário
